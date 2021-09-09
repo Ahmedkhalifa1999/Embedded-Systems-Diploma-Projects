@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+#define WITH_ENGINE_TEMP_CONTROLLER 0
+
+typedef enum BinaryState {ON, OFF} BinaryState;
+BinaryState engine = OFF, ac = OFF;
+int speed = 0, roomTemp = 20;
+#if(WITH_ENGINE_TEMP_CONTROLLER)
+BinaryState engineTempController = OFF;
+int engineTemp = 125;
+#endif
+
+void printState() {
+	printf("Engine: "); (engine == ON)?printf("ON\n"):printf("OFF\n");
+	printf("AC: "); (ac == ON)?printf("ON\n"):printf("OFF\n");
+	printf("Vehicle Speed: %d\n", speed);
+	printf("Room Temperature: %d\n", roomTemp);
+	#if(WITH_ENGINE_TEMP_CONTROLLER)
+	printf("Engine Temperature Controller State: "); (engineTempController == ON)?printf("ON\n"):printf("OFF\n");
+	printf("Engine Temperature: %d\n", engineTemp);
+	#endif
+	printf("\n");
+}
+
+#if(WITH_ENGINE_TEMP_CONTROLLER)
+void setEgnineTemperature(int temp) {
+	if (temp < 100) {
+		engineTempController = ON;
+		engineTemp = 125;
+	}
+	else if (temp > 150) {
+		engineTempController = ON;
+		engineTemp = 125;
+	}
+	else engineTempController = OFF;
+	printState();
+}
+#endif
+
+void setSpeed(char trafficLight) {
+	switch(trafficLight) {
+	case 'G' : speed = 100; break;
+	case 'O' :
+		speed = 30;
+		ac = ON;
+		roomTemp = (int)((float)roomTemp*(5/4) + 1);
+		#if(WITH_ENGINE_TEMP_CONTROLLER)
+		engineTempController = ON;
+		engineTemp = (int)((float)engineTemp*(5/4) + 1);
+		#endif
+		break;
+	case 'R' : speed = 0; break;
+	}
+	printState();
+}
+
+void setRoomTemp(int temp) {
+	if (temp < 10) {
+		ac = ON;
+		roomTemp = 20;
+	}
+	else if (temp > 30) {
+		ac = ON;
+		roomTemp = 20;
+	}
+	else ac = OFF;
+	printState();
+}
+
+int main(void) {
+	setbuf(stdout, NULL);
+	char inputChar;
+	int inputNum;
+	while(1) {
+		switch(engine) {
+		case OFF:
+			printf("a. Turn on the vehicle engine\n");
+			printf("b. Turn off the vehicle engine\n");
+			printf("c. Quit the system\n");
+			scanf(" %c", &inputChar);
+			switch(inputChar) {
+			case 'a': engine = ON; break;
+			case 'b': engine = OFF; break;
+			case 'c': goto end;
+			}
+			break;
+		case ON:
+			printf("a. Turn off engine\n");
+			printf("b. Set the traffic light color\n");
+			printf("c. Set the room temperature\n");
+			#if(WITH_ENGINE_TEMP_CONTROLLER)
+			printf("d .Set the engine temperature\n");
+			#endif
+			scanf(" %c", &inputChar);
+			switch(inputChar) {
+			case 'a': engine = OFF; break;
+			case 'b':
+				printf("Set traffic light color: \n");
+				scanf(" %c", &inputChar);
+				setSpeed(inputChar);
+				break;
+			case 'c':
+				printf("Set the room temperature:\n");
+				scanf(" %d", &inputNum);
+				setRoomTemp(inputNum);
+				break;
+			#if(WITH_ENGINE_TEMP_CONTROLLER)
+			case 'd':
+				printf("Set the engine temperature:\n");
+				scanf(" %d", &inputNum);
+				setEgnineTemp(inputNum);
+				break;
+			#endif
+			}
+		}
+	}
+	end:
+	return 0;
+}

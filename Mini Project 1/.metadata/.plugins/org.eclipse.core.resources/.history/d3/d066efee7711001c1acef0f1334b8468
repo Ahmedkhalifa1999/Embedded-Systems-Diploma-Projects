@@ -1,0 +1,89 @@
+#include <stdio.h>
+
+typedef enum BinaryState {ON, OFF} BinaryState;
+BinaryState engine = OFF, ac = OFF, engineTempController = OFF;
+int speed = 0, roomTemp = 0, engineTemp = 0;
+
+void printState() {
+	printf("Engine: "); (engine == ON)?printf("ON\n"):printf("OFF\n");
+	printf("AC: "); (ac == ON)?printf("ON\n"):printf("OFF\n");
+	printf("Vehicle Speed: %d\n", speed);
+	printf("Room Temperature: %d\n", roomTemp);
+	printf("Engine Temperature Controller State: "); (engineTempController == ON)?printf("ON\n"):printf("OFF\n");
+	printf("Engine Temperature: %d\n\n", engineTemp);
+}
+
+int main(void) {
+	setbuf(stdout, NULL);
+	char input;
+	while(1) {
+		switch(engine) {
+		case OFF:
+			printf("a. Turn on the vehicle engine\n");
+			printf("b. Turn off the vehicle engine\n");
+			printf("c. Quit the system\n");
+			scanf(" %c", &input);
+			switch(input) {
+			case 'a': engine = ON; break;
+			case 'b': engine = OFF; break;
+			case 'c': goto end;
+			}
+			break;
+		case ON:
+			printf("a. Turn off engine\n");
+			printf("b. Set the traffic light color\n");
+			printf("c. Set the room temperature\n");
+			printf("d .Set the engine temperature\n");
+			scanf(" %c", &input);
+			switch(input) {
+			case 'a': engine = OFF; break;
+			case 'b':
+				printf("Set traffic light color: \n");
+				scanf(" %c", &input);
+				switch(input) {
+				case 'G' : speed = 100; break;
+				case 'O' :
+					speed = 30;
+					ac = ON;
+					roomTemp = (int)((float)roomTemp*(5/4) + 1);
+					engineTempController = ON;
+					engineTemp = (int)((float)engineTemp*(5/4) + 1);
+					break;
+				case 'R' : speed = 0; break;
+				}
+				printState();
+				break;
+			case 'c':
+				printf("Set the room temperature:\n");
+				scanf(" %d", &roomTemp);
+				if (roomTemp < 10) {
+					ac = ON;
+					roomTemp = 20;
+				}
+				else if (roomTemp > 30) {
+					ac = ON;
+					roomTemp = 20;
+				}
+				else ac = OFF;
+				printState();
+				break;
+			case 'd':
+				printf("Set the engine temperature:\n");
+				scanf(" %d", &engineTemp);
+				if (engineTemp < 100) {
+					engineTempController = ON;
+					engineTemp = 125;
+				}
+				else if (engineTemp > 150) {
+					engineTempController = ON;
+					roomTemp = 125;
+				}
+				else engineTempController = OFF;
+				printState();
+				break;
+			}
+		}
+	}
+	end:
+	return 0;
+}
