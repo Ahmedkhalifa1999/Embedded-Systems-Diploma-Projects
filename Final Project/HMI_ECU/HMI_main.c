@@ -121,6 +121,7 @@ void firstStartup() {
 	uint8 pass2[16];
 
 	/* Get Password from User */
+	LCD_clearScreen();
 	LCD_displayString("New Password:");
 	LCD_moveCursor(1, 0);
 	getPassword(pass1);

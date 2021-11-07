@@ -154,7 +154,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2ae0
+.text           0x00000000     0x2ae4
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
                 0x00000000                __vectors
@@ -281,98 +281,98 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000f58       0x28 ./HMI_main.o
                 0x00000f58                soundAlarm
  .text.firstStartup
-                0x00000f80      0x1ae ./HMI_main.o
+                0x00000f80      0x1b2 ./HMI_main.o
                 0x00000f80                firstStartup
  .text.openDoor
-                0x0000112e      0x1a0 ./HMI_main.o
-                0x0000112e                openDoor
+                0x00001132      0x1a0 ./HMI_main.o
+                0x00001132                openDoor
  .text.changePassword
-                0x000012ce      0x314 ./HMI_main.o
-                0x000012ce                changePassword
+                0x000012d2      0x314 ./HMI_main.o
+                0x000012d2                changePassword
  .text.GPIO_setupPinDirection
-                0x000015e2      0x1d6 ./gpio.o
-                0x000015e2                GPIO_setupPinDirection
+                0x000015e6      0x1d6 ./gpio.o
+                0x000015e6                GPIO_setupPinDirection
  .text.GPIO_writePin
-                0x000017b8      0x1d6 ./gpio.o
-                0x000017b8                GPIO_writePin
+                0x000017bc      0x1d6 ./gpio.o
+                0x000017bc                GPIO_writePin
  .text.GPIO_readPin
-                0x0000198e      0x136 ./gpio.o
-                0x0000198e                GPIO_readPin
+                0x00001992      0x136 ./gpio.o
+                0x00001992                GPIO_readPin
  .text.GPIO_setupPortDirection
-                0x00001ac4       0x88 ./gpio.o
-                0x00001ac4                GPIO_setupPortDirection
+                0x00001ac8       0x88 ./gpio.o
+                0x00001ac8                GPIO_setupPortDirection
  .text.GPIO_writePort
-                0x00001b4c       0x88 ./gpio.o
-                0x00001b4c                GPIO_writePort
+                0x00001b50       0x88 ./gpio.o
+                0x00001b50                GPIO_writePort
  .text.GPIO_readPort
-                0x00001bd4       0x8a ./gpio.o
-                0x00001bd4                GPIO_readPort
+                0x00001bd8       0x8a ./gpio.o
+                0x00001bd8                GPIO_readPort
  .text.KEYPAD_getPressedKey
-                0x00001c5e       0xa2 ./keypad.o
-                0x00001c5e                KEYPAD_getPressedKey
+                0x00001c62       0xa2 ./keypad.o
+                0x00001c62                KEYPAD_getPressedKey
  .text.KEYPAD_4x4_adjustKeyNumber
-                0x00001d00      0x14e ./keypad.o
+                0x00001d04      0x14e ./keypad.o
  .text.LCD_init
-                0x00001e4e       0x46 ./lcd.o
-                0x00001e4e                LCD_init
+                0x00001e52       0x46 ./lcd.o
+                0x00001e52                LCD_init
  .text.LCD_sendCommand
-                0x00001e94      0x3ea ./lcd.o
-                0x00001e94                LCD_sendCommand
+                0x00001e98      0x3ea ./lcd.o
+                0x00001e98                LCD_sendCommand
  .text.LCD_displayCharacter
-                0x0000227e      0x3ea ./lcd.o
-                0x0000227e                LCD_displayCharacter
+                0x00002282      0x3ea ./lcd.o
+                0x00002282                LCD_displayCharacter
  .text.LCD_displayString
-                0x00002668       0x52 ./lcd.o
-                0x00002668                LCD_displayString
+                0x0000266c       0x52 ./lcd.o
+                0x0000266c                LCD_displayString
  .text.LCD_moveCursor
-                0x000026ba       0x84 ./lcd.o
-                0x000026ba                LCD_moveCursor
+                0x000026be       0x84 ./lcd.o
+                0x000026be                LCD_moveCursor
  .text.LCD_displayStringRowColumn
-                0x0000273e       0x32 ./lcd.o
-                0x0000273e                LCD_displayStringRowColumn
+                0x00002742       0x32 ./lcd.o
+                0x00002742                LCD_displayStringRowColumn
  .text.LCD_intgerToString
-                0x00002770       0x46 ./lcd.o
-                0x00002770                LCD_intgerToString
+                0x00002774       0x46 ./lcd.o
+                0x00002774                LCD_intgerToString
  .text.LCD_clearScreen
-                0x000027b6       0x14 ./lcd.o
-                0x000027b6                LCD_clearScreen
+                0x000027ba       0x14 ./lcd.o
+                0x000027ba                LCD_clearScreen
  .text.UART_init
-                0x000027ca       0xac ./uart.o
-                0x000027ca                UART_init
+                0x000027ce       0xac ./uart.o
+                0x000027ce                UART_init
  .text.UART_sendByte
-                0x00002876       0x2e ./uart.o
-                0x00002876                UART_sendByte
+                0x0000287a       0x2e ./uart.o
+                0x0000287a                UART_sendByte
  .text.UART_receiveByte
-                0x000028a4       0x1e ./uart.o
-                0x000028a4                UART_receiveByte
+                0x000028a8       0x1e ./uart.o
+                0x000028a8                UART_receiveByte
  .text.UART_sendString
-                0x000028c2       0x58 ./uart.o
-                0x000028c2                UART_sendString
+                0x000028c6       0x58 ./uart.o
+                0x000028c6                UART_sendString
  .text.UART_receiveString
-                0x0000291a       0x86 ./uart.o
-                0x0000291a                UART_receiveString
- .text.libgcc   0x000029a0       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x000029a0                __udivmodsi4
- .text.libgcc   0x000029e4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000029e4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000029e4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x000029e4       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x000029e4                __prologue_saves__
- .text.libgcc   0x00002a1c       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00002a1c                __epilogue_restores__
+                0x0000291e       0x86 ./uart.o
+                0x0000291e                UART_receiveString
+ .text.libgcc   0x000029a4       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x000029a4                __udivmodsi4
+ .text.libgcc   0x000029e8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000029e8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000029e8        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000029e8       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x000029e8                __prologue_saves__
+ .text.libgcc   0x00002a20       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00002a20                __epilogue_restores__
  .text.avr-libc
-                0x00002a52       0x42 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
-                0x00002a52                itoa
+                0x00002a56       0x42 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                0x00002a56                itoa
  .text.avr-libc
-                0x00002a94       0x20 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
-                0x00002a94                strrev
- .text.libgcc   0x00002ab4       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00002ab4                __udivmodhi4
-                0x00002adc                . = ALIGN (0x2)
+                0x00002a98       0x20 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00002a98                strrev
+ .text.libgcc   0x00002ab8       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00002ab8                __udivmodhi4
+                0x00002ae0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002adc        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00002adc                exit
-                0x00002adc                _exit
+ .fini9         0x00002ae0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00002ae0                exit
+                0x00002ae0                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -391,11 +391,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002adc        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00002ae0        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002ae0                _etext = .
+                0x00002ae4                _etext = .
 
-.data           0x00800060       0xa8 load address 0x00002ae0
+.data           0x00800060       0xa8 load address 0x00002ae4
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
@@ -474,8 +474,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0080010a        0x1 ./HMI_main.o
  *(COMMON)
                 0x0080010b                PROVIDE (__bss_end, .)
-                0x00002ae0                __data_load_start = LOADADDR (.data)
-                0x00002b88                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00002ae4                __data_load_start = LOADADDR (.data)
+                0x00002b8c                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080010b        0x0
                 0x0080010b                PROVIDE (__noinit_start, .)
@@ -500,16 +500,16 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x2748
+.stab           0x00000000     0x2754
  *(.stab)
- .stab          0x00000000      0xf9c ./HMI_main.o
- .stab          0x00000f9c      0x654 ./gpio.o
+ .stab          0x00000000      0xfa8 ./HMI_main.o
+ .stab          0x00000fa8      0x654 ./gpio.o
                                 0x870 (size before relaxing)
- .stab          0x000015f0      0x330 ./keypad.o
+ .stab          0x000015fc      0x330 ./keypad.o
                                 0x408 (size before relaxing)
- .stab          0x00001920      0xaa4 ./lcd.o
+ .stab          0x0000192c      0xaa4 ./lcd.o
                                 0xd08 (size before relaxing)
- .stab          0x000023c4      0x384 ./uart.o
+ .stab          0x000023d0      0x384 ./uart.o
                                 0x618 (size before relaxing)
 
 .stabstr        0x00000000      0xeff
