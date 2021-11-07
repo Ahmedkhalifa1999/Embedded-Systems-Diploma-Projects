@@ -1,9 +1,9 @@
-HMI_main.o HMI_main.o: ../HMI_main.c ../keypad.h ../std_types.h ../lcd.h \
+HMI_main.o HMI_main.o: ../HMI_main.c ../std_types.h ../keypad.h ../lcd.h \
   ../uart.h
 
-../keypad.h:
-
 ../std_types.h:
+
+../keypad.h:
 
 ../lcd.h:
 

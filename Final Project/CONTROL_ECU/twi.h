@@ -6,7 +6,7 @@
  *
  * Description: Header file for the TWI(I2C) AVR driver
  *
- * Author: Mohamed Tarek
+ * Author: Mohamed Tarek & Ahmed Abd El-Moneam Khalifa
  *
  *******************************************************************************/ 
 
@@ -15,14 +15,16 @@
 
 #include "std_types.h"
 
+/* Data type defining TWI standard operation speeds/bitrates */
 typedef enum {
-	NORMAL,
-	FAST
+	NORMAL, //100 kbps
+	FAST 	//400 kbps
 }TWI_speed;
 
+/* Data type defining TWI configuration structure */
 typedef struct {
-	TWI_speed speed;
-	uint8 address;
+	TWI_speed speed; /* Speed/Bitrate */
+	uint8 address;   /* Device I2C/TWI Address */
 }TWI_config;
 
 /*******************************************************************************

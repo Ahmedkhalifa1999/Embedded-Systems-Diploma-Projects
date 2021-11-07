@@ -6,7 +6,7 @@
  *
  * Description: Header file for the UART AVR driver
  *
- * Author: Mohamed Tarek
+ * Author: Mohamed Tarek & Ahmed Abd El-Moneam Khalifa
  *
  *******************************************************************************/
 
@@ -15,22 +15,25 @@
 
 #include "std_types.h"
 
-typedef enum {
+/* Data type defining different available parity types */
+typedef enum { /* number are shifted left by 4 to OR them directly when setting registers */
 	NO_PARITY = 0 << 4,
 	EVEN = 2 << 4,
 	ODD = 3 << 4,
 }UART_parity;
 
-typedef enum {
+/* Data type defining different available Stop Bit counts*/
+typedef enum { /* number are shifted left by 3 to OR them directly when setting registers */
 	ONE = 0 << 3,
 	TWO = 1 << 3
 }UART_stopBits;
 
+/* Data type defining UART configuration structure */
 typedef struct {
 	uint32 baudRate;
 	UART_stopBits stopBits;
 	UART_parity parity;
-	uint8 dataSize;
+	uint8 dataSize; /* Number of data bits per frame */
 }UART_config;
 
 /*******************************************************************************

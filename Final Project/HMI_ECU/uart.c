@@ -6,7 +6,7 @@
  *
  * Description: Source file for the UART AVR driver
  *
- * Author: Mohamed Tarek
+ * Author: Mohamed Tarek & Ahmed Abd El-Moneam Khalifa
  *
  *******************************************************************************/
 

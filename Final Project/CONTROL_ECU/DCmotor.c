@@ -6,7 +6,7 @@
  *
  * Description: Source file for the DC motor driver
  *
- * Author: Ahmed Abd El-Moneam
+ * Author: Ahmed Abd El-Moneam Khalifa
  *
  *******************************************************************************/
 
